@@ -77,7 +77,19 @@ const register = async (req, res) => {
   }
 };
 
+const me = async (req, res) => {
+  try {
+    const { email } = req.user;
+    const user = await authModel.getUserByEmail(email);
+    return res.json({ email, id: user.id });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ error: "Server error" });
+  }
+};
+
 export const authController = {
   login,
   register,
+  me,
 };
