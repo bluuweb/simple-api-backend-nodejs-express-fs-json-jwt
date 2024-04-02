@@ -37,7 +37,7 @@ const login = async (req, res) => {
 
     return res.json({ email, token });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json({ error: "Server error" });
   }
 };
@@ -72,7 +72,7 @@ const register = async (req, res) => {
 
     return res.json({ email, token });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json({ error: "Server error" });
   }
 };
@@ -83,7 +83,7 @@ const me = async (req, res) => {
     const user = await authModel.getUserByEmail(email);
     return res.json({ email, id: user.id });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.status(500).json({ error: "Server error" });
   }
 };

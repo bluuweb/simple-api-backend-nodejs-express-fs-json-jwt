@@ -5,6 +5,12 @@ const getPizzas = async () => {
   return JSON.parse(data);
 };
 
+const getPizza = async (id) => {
+  const pizzas = await getPizzas();
+  return pizzas.find((pizza) => pizza.id === id);
+};
+
 export const pizzaModel = {
   getPizzas,
+  getPizza,
 };

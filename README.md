@@ -2,12 +2,30 @@
 
 API para consumir un servicio de Auth con JWT.
 
+## Instalación
+
+```sh
+npm install
+```
+
+## Uso
+
+```sh
+npm run dev
+```
+
 ## Endpoints
 
 ### Pizzas
 
 ```sh
 GET /api/pizzas
+```
+
+### Pizza (única)
+
+```sh
+GET /api/pizzas/:id
 ```
 
 ### Auth
