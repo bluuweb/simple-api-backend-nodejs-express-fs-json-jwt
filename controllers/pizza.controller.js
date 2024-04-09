@@ -7,7 +7,10 @@ const readPizzas = async (req, res) => {
 
 const readPizza = async (req, res) => {
   const { id } = req.params;
-  const pizza = await pizzaModel.getPizza(id);
+  const pizza = await pizzaModel.getPizza(id.toLowerCase());
+  if (!pizza) {
+    return res.status(404).json({ message: "Pizza not found" });
+  }
   res.json(pizza);
 };
 
